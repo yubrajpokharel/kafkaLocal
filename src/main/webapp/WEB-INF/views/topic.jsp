@@ -13,8 +13,9 @@
                 var table = $("<table>").addClass("table");
                 $.each(topics, function(index, topic) {
                     var row = $("<tr>");
-                    $("<td>").text(topic).appendTo(row);
-                    row.appendTo(table);
+                    $("<td>").append($("<a>").text(topic).attr("href", "/topic/" + topic)).appendTo(row);
+
+                  row.appendTo(table);
                 });
                 $("#topics").html(table);
             });
@@ -35,8 +36,8 @@
                             var table = $("<table>").addClass("table");
                             $.each(topics, function(index, topic) {
                                 var row = $("<tr>");
-                                $("<td>").text(topic).appendTo(row);
-                                row.appendTo(table);
+                              $("<td>").append($("<a>").text(topic).attr("href", "/topic/" + topic)).appendTo(row);
+                               row.appendTo(table);
                             });
                             $("#topics").html(table);
                         });
@@ -60,8 +61,10 @@
             <label for="newTopicName">Topic name:</label>
             <input type="text" class="form-control" id="newTopicName" name="newTopicName">
         </div>
+        <br>
         <button type="submit" class="btn btn-primary">Create topic</button>
     </form>
+    <br>
     <div id="newTopicResult"></div>
 </div>
 </body>
